@@ -3,7 +3,6 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-
     if args.len() != 2 {
         eprintln!("Usage: getchars <chars>");
         eprintln!("Example: getchars 1,2,4");
@@ -11,9 +10,7 @@ fn main() {
     }
 
     let input_string = prompt_password("String: ").expect("Failed to read input.");
-
     let chars: Vec<char> = input_string.chars().collect();
-
     let positions = args[1]
         .split(',')
         .filter_map(|p| p.parse::<usize>().ok())
